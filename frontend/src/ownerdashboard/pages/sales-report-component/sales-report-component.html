@@ -1,0 +1,26 @@
+<div class="report-wrap">
+  <h2>Sales Report</h2>
+
+  <div class="summary-card">
+    <mat-card>
+      <mat-list>
+        <mat-list-item>Total Sales: ₹{{ totalSales | number:'1.2-2' }}</mat-list-item>
+        <mat-list-item>Total Items Sold: {{ totalItems }}</mat-list-item>
+        <mat-list-item>Average Order Value: ₹{{ averageOrderValue | number:'1.2-2' }}</mat-list-item>
+        <mat-list-item>Total Invoices: {{ totalInvoices }}</mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+
+  <div class="chart-container">
+    <mat-card>
+      <h3>Sales Trend (Daily)</h3>
+      <canvas baseChart
+              [datasets]="chartData.datasets"
+              [labels]="chartData.labels"
+              [options]="chartOptions"
+              [type]="'line'">
+      </canvas>
+    </mat-card>
+  </div>
+</div>

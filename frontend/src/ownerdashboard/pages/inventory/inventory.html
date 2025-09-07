@@ -1,0 +1,99 @@
+<div class="inventory-container">
+  <!-- Notification Banner -->
+  <div *ngIf="showLowStockNotification" class="notification-banner">
+    <span class="notification-text">
+      ⚠️ Warning: Some products have low stock (less than 10 units). Please review the product list.
+    </span>
+    <button class="notification-close" (click)="dismissNotification()">×</button>
+  </div>
+
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="section-title">📦 Inventory Management</h2>
+    <span class="text-sm text-gray-500">{{ products.length }} product(s)</span>
+  </div>
+
+  <!-- Add / Update Form -->
+  <div class="form-container">
+    <h3 class="form-title">{{ editing ? '✏️ Update Product' : '➕ Add Product' }}</h3>
+    <form (ngSubmit)="saveProduct()" class="space-y-6">
+      <div class="form-grid">
+        <div class="relative input-wrapper">
+          <input [(ngModel)]="productData.name" name="name" placeholder=" " class="form-input" required />
+          <label class="input-label">Product Name</label>
+        </div>
+
+        <div class="relative input-wrapper">
+          <input [(ngModel)]="productData.price" name="price" type="number" min="0" step="0.01" placeholder=" " class="form-input" required />
+          <label class="input-label">Price (₹)</label>
+        </div>
+
+        <div class="relative input-wrapper">
+          <input [(ngModel)]="productData.stock" name="stock" type="number" min="0" placeholder=" " class="form-input" required />
+          <label class="input-label">Stock Quantity</label>
+        </div>
+
+        <div class="relative input-wrapper">
+          <input [(ngModel)]="productData.taxPercent" name="taxPercent" type="number" min="0" max="100" placeholder=" " class="form-input" />
+          <label class="input-label">Tax Percent (%)</label>
+        </div>
+
+        <div class="relative input-wrapper">
+          <input [(ngModel)]="productData.barcode" name="barcode" type="text" placeholder=" " class="form-input" required />
+          <label class="input-label">Barcode</label>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">{{ editing ? 'Update Product' : 'Add Product' }}</button>
+        <button type="button" *ngIf="editing" class="btn-secondary" (click)="resetForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Product Table -->
+  <div class="table-container">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th class="text-left">Name</th>
+          <th class="text-left">Price</th>
+          <th class="text-left">Stock</th>
+          <th class="text-center">Tax</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products" class="table-row">
+          <td class="product-name">{{ p.name }}</td>
+          <td class="product-price">₹{{ p.price | number:'1.2-2' }}</td>
+          <td class="product-stock">
+            <span [class]="'stock-badge ' + (p.stock > 10 ? 'in-stock' : (p.stock > 0 ? 'low-stock' : 'out-of-stock'))">
+              {{ p.stock }}
+            </span>
+          </td>
+          <td class="text-center">{{ p.taxPercent }}%</td>
+          <td class="action-buttons">
+            <button class="btn-view" (click)="viewProduct(p)">👁️</button>
+            <button class="btn-edit" (click)="editProduct(p)">✏️</button>
+            <button class="btn-delete" (click)="deleteProduct(p.id)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- View Modal -->
+  <div *ngIf="selectedProduct" class="modal-overlay" (click)="closeView()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeView()">×</button>
+      <h3 class="modal-title">Product Details</h3>
+      <div class="product-details">
+        <div class="detail-row"><span class="detail-label">ID</span><span class="detail-value">{{ selectedProduct.id }}</span></div>
+        <div class="detail-row"><span class="detail-label">Name</span><span class="detail-value">{{ selectedProduct.name }}</span></div>
+        <div class="detail-row"><span class="detail-label">Price</span><span class="detail-value">₹{{ selectedProduct.price | number:'1.2-2' }}</span></div>
+        <div class="detail-row"><span class="detail-label">Stock</span><span class="detail-value">{{ selectedProduct.stock }}</span></div>
+        <div class="detail-row"><span class="detail-label">Barcode</span><span class="detail-value">{{ selectedProduct.barcode }}</span></div>
+        <div class="detail-row"><span class="detail-label">Tax Percent</span><span class="detail-value">{{ selectedProduct.taxPercent }}%</span></div>
+      </div>
+    </div>
+  </div>
+</div>

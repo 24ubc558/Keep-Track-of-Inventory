@@ -1,0 +1,10 @@
+<div *ngFor="let line of invoice.lines" class="line">
+  <span>{{ line.productName }} x {{ line.qty }}</span>
+  <span>₹{{ line.total | number:'1.2-2' }}</span>
+</div>
+
+<div class="summary">
+  <div>Subtotal: ₹{{ invoice.subtotal | number:'1.2-2' }}</div>
+  <div>Tax: ₹{{ invoice.tax | number:'1.2-2' }}</div>
+  <div>Grand Total: ₹{{ invoice.grandTotal | number:'1.2-2' }}</div>
+</div>

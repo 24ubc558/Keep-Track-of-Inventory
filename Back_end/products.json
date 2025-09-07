@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1757220291320,
+    "name": "Cola 500ml",
+    "barcode": "8901234567890",
+    "price": 35,
+    "taxPercent": 12,
+    "stock": 120
+  },
+  {
+    "id": 1757220291321,
+    "name": "Chips 80g",
+    "barcode": "8901111111111",
+    "price": 20,
+    "taxPercent": 12,
+    "stock": 80
+  },
+  {
+    "id": 1757220291322,
+    "name": "Milk 1L",
+    "barcode": "8902222222222",
+    "price": 54,
+    "taxPercent": 5,
+    "stock": 3
+  },
+  {
+    "id": 1757220366155,
+    "name": "Jam 100g",
+    "price": 100,
+    "stock": 90,
+    "barcode": "12412341234",
+    "taxPercent": 12
+  }
+]

@@ -1,0 +1,17 @@
+<div class="sidenav" [style.width]="sidenavWidth">
+  <mat-nav-list>
+    <a
+      *ngFor="let item of navItems"
+      mat-list-item
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <div class="nav-item-content">
+        <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+        <span *ngIf="isOpen" class="nav-label">{{ item.label }}</span>
+        <span *ngIf="item.notification" class="notification">{{ item.notification }}</span>
+      </div>
+    </a>
+  </mat-nav-list>
+</div>

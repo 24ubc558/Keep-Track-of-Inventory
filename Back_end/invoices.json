@@ -1,0 +1,242 @@
+[
+  {
+    "id": "1757220438089",
+    "createdAt": "2025-09-07T04:47:18.089Z",
+    "lines": [
+      {
+        "id": "17572204330575hh78",
+        "productId": 1757220366155,
+        "productName": "Jam 100g",
+        "barcode": "12412341234",
+        "qty": 1,
+        "price": 100,
+        "discountPercent": 0,
+        "taxPercent": 12,
+        "subtotal": 100,
+        "taxAmount": 12,
+        "total": 112
+      }
+    ],
+    "subtotal": 100,
+    "tax": 12,
+    "discount": 0,
+    "grandTotal": 112,
+    "paidAmount": 112
+  },
+  {
+    "id": "1757220488121",
+    "createdAt": "2025-09-07T04:48:08.121Z",
+    "lines": [
+      {
+        "id": "1757220477043fp6ib",
+        "productId": 1757220366155,
+        "productName": "Jam 100g",
+        "barcode": "12412341234",
+        "qty": 2,
+        "price": 100,
+        "discountPercent": 0,
+        "taxPercent": 12,
+        "subtotal": 200,
+        "taxAmount": 24,
+        "total": 224
+      }
+    ],
+    "subtotal": 200,
+    "tax": 24,
+    "discount": 0,
+    "grandTotal": 224,
+    "paidAmount": 224
+  },
+  {
+    "id": "1757222332110",
+    "createdAt": "2025-09-07T05:18:52.110Z",
+    "lines": [
+      {
+        "id": "175722232340910lay",
+        "productId": 1757220291322,
+        "productName": "Milk 1L",
+        "barcode": "8902222222222",
+        "qty": 1,
+        "price": 54,
+        "discountPercent": 0,
+        "taxPercent": 5,
+        "subtotal": 54,
+        "taxAmount": 2.7,
+        "total": 56.7
+      }
+    ],
+    "subtotal": 54,
+    "tax": 2.7,
+    "discount": 0,
+    "grandTotal": 56.7,
+    "paidAmount": 56.7
+  },
+  {
+    "id": "175721000001",
+    "createdAt": "2025-09-06T08:15:22.000Z",
+    "lines": [
+      {
+        "id": "175721000101",
+        "productId": 1757220366155,
+        "productName": "Jam 100g",
+        "barcode": "12412341234",
+        "qty": 3,
+        "price": 100,
+        "discountPercent": 0,
+        "taxPercent": 12,
+        "subtotal": 300,
+        "taxAmount": 36,
+        "total": 336
+      }
+    ],
+    "subtotal": 300,
+    "tax": 36,
+    "discount": 0,
+    "grandTotal": 336,
+    "paidAmount": 336
+  },
+  {
+    "id": "175721000002",
+    "createdAt": "2025-09-06T10:40:55.000Z",
+    "lines": [
+      {
+        "id": "175721000102",
+        "productId": 1757220291322,
+        "productName": "Milk 1L",
+        "barcode": "8902222222222",
+        "qty": 2,
+        "price": 54,
+        "discountPercent": 0,
+        "taxPercent": 5,
+        "subtotal": 108,
+        "taxAmount": 5.4,
+        "total": 113.4
+      }
+    ],
+    "subtotal": 108,
+    "tax": 5.4,
+    "discount": 0,
+    "grandTotal": 113.4,
+    "paidAmount": 113.4
+  },
+  {
+    "id": "175721000003",
+    "createdAt": "2025-09-06T13:20:10.000Z",
+    "lines": [
+      {
+        "id": "175721000103",
+        "productId": 1757220456789,
+        "productName": "Bread 400g",
+        "barcode": "9876543210123",
+        "qty": 1,
+        "price": 40,
+        "discountPercent": 0,
+        "taxPercent": 5,
+        "subtotal": 40,
+        "taxAmount": 2,
+        "total": 42
+      }
+    ],
+    "subtotal": 40,
+    "tax": 2,
+    "discount": 0,
+    "grandTotal": 42,
+    "paidAmount": 42
+  },
+  {
+    "id": "175720000001",
+    "createdAt": "2025-09-05T09:10:15.000Z",
+    "lines": [
+      {
+        "id": "175720000101",
+        "productId": 1757220366155,
+        "productName": "Jam 100g",
+        "barcode": "12412341234",
+        "qty": 2,
+        "price": 100,
+        "discountPercent": 0,
+        "taxPercent": 12,
+        "subtotal": 200,
+        "taxAmount": 24,
+        "total": 224
+      }
+    ],
+    "subtotal": 200,
+    "tax": 24,
+    "discount": 0,
+    "grandTotal": 224,
+    "paidAmount": 224
+  },
+  {
+    "id": "175720000002",
+    "createdAt": "2025-09-05T11:25:40.000Z",
+    "lines": [
+      {
+        "id": "175720000102",
+        "productId": 1757220291322,
+        "productName": "Milk 1L",
+        "barcode": "8902222222222",
+        "qty": 3,
+        "price": 54,
+        "discountPercent": 0,
+        "taxPercent": 5,
+        "subtotal": 162,
+        "taxAmount": 8.1,
+        "total": 170.1
+      }
+    ],
+    "subtotal": 162,
+    "tax": 8.1,
+    "discount": 0,
+    "grandTotal": 170.1,
+    "paidAmount": 170.1
+  },
+  {
+    "id": "175720000003",
+    "createdAt": "2025-09-05T14:50:05.000Z",
+    "lines": [
+      {
+        "id": "175720000103",
+        "productId": 1757220456789,
+        "productName": "Bread 400g",
+        "barcode": "9876543210123",
+        "qty": 1,
+        "price": 40,
+        "discountPercent": 0,
+        "taxPercent": 5,
+        "subtotal": 40,
+        "taxAmount": 2,
+        "total": 42
+      }
+    ],
+    "subtotal": 40,
+    "tax": 2,
+    "discount": 0,
+    "grandTotal": 42,
+    "paidAmount": 42
+  },
+  {
+    "id": "1757224858284",
+    "createdAt": "2025-09-07T06:00:58.284Z",
+    "lines": [
+      {
+        "id": "17572248441022mts4",
+        "productId": 1757220366155,
+        "productName": "Jam 100g",
+        "barcode": "12412341234",
+        "qty": 1,
+        "price": 100,
+        "discountPercent": 0,
+        "taxPercent": 12,
+        "subtotal": 100,
+        "taxAmount": 12,
+        "total": 112
+      }
+    ],
+    "subtotal": 100,
+    "tax": 12,
+    "discount": 0,
+    "grandTotal": 112,
+    "paidAmount": 112
+  }
+]

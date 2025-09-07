@@ -1,0 +1,122 @@
+:host {
+  display: block;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+:host:hover {
+  transform: translateY(-4px);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.9rem;
+  color: #374151;
+  transition: background 0.2s ease;
+}
+
+.line:hover {
+  background: #f9fafb;
+}
+
+.line:last-child {
+  border-bottom: none;
+}
+
+.line span:first-child {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.line span:last-child {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.summary {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-align: right;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.summary div {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.summary div:last-child {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  :host {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .line {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .summary {
+    padding: 0.75rem;
+  }
+
+  .summary div {
+    font-size: 0.9rem;
+  }
+
+  .summary div:last-child {
+    font-size: 1.1rem;
+  }
+}
+
+@media print {
+  :host {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .line:hover {
+    background: none;
+  }
+
+  .summary {
+    background: none;
+  }
+}

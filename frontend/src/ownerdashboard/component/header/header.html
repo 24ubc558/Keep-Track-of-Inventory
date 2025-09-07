@@ -1,0 +1,63 @@
+<mat-toolbar class="header-toolbar mat-elevation-z4">
+  <div class="toolbar-container">
+    <!-- Left Section -->
+    <div class="toolbar-left">
+      <button mat-icon-button (click)="onToggleSideNav()" class="menu-button" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <div class="branding">
+        <span class="app-name">IMS-DASHBOARD</span>
+        <span class="app-tagline">Analytics Console</span>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="toolbar-right">
+      <!-- Search Bar (Visible on desktop) -->
+      <div class="search-container">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input class="search-input" placeholder="Search..." aria-label="Search">
+      </div>
+
+      <!-- Notification Button -->
+      <button mat-icon-button class="action-button notification-button" 
+              [matBadge]="notificationsCount" matBadgeColor="warn" matBadgeSize="small"
+              aria-label="Notifications">
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+      <!-- User Profile -->
+      <div class="user-profile" [matMenuTriggerFor]="profileMenu">
+        <img [src]="userProfile.avatar" class="avatar" alt="User avatar">
+        <div class="user-info">
+          <span class="user-name">{{userProfile.name || 'User'}}</span>
+          <span class="user-email">{{userProfile.email}}</span>
+        </div>
+        <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Menu -->
+  <mat-menu #profileMenu="matMenu" class="profile-menu" xPosition="before">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>My Profile</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Account Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>dark_mode</mat-icon>
+      <span>Dark Mode</span>
+      <mat-slide-toggle class="theme-toggle"></mat-slide-toggle>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item class="logout-item" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Log Out</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

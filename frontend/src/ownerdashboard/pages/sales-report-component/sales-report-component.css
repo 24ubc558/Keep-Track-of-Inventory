@@ -1,0 +1,48 @@
+.report-wrap {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card,
+.chart-card {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+mat-list-item {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.chart-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+    height: 350px;      /* Set your desired fixed height */
+  width: 100%;         /* Full width */
+  overflow: hidden;    /* Prevent scroll growth */
+}
+
+mat-card {
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  height: 100% !important;
+  width: 100% !important;
+}
+

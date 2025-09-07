@@ -1,0 +1,87 @@
+<div class="pos-wrap">
+
+ 
+
+ 
+  <div class="left">
+        <h1>Billing</h1>
+    <div class="controls">
+      <div class="scanner-container">
+        <input #barcodeInput [(ngModel)]="barcode" (input)="onScannerInput($event)" placeholder="Waiting for barcode scan..." class="scanner-input" />
+        <span class="scanner-status" [ngClass]="{'connected': isScannerConnected, 'disconnected': !isScannerConnected}" (click)="toggleScanner()">
+          {{ isScannerConnected ? '🔌' : 'not connected🔌' }}
+        </span>
+      </div>
+      <input type="number" min="1" [(ngModel)]="qty" class="qty" placeholder="Qty" />
+
+      <button (click)="onScan()" class="btn add">Scan/Add</button>
+      <button (click)="focusScanner()" class="btn add">Focus Scanner</button>
+
+      <input type="number" placeholder="Enter Product ID" [(ngModel)]="manualProductId" class="manual-id" />
+      <button (click)="addById()" class="btn add">Add by ID</button>
+
+      <div class="search">
+        <input placeholder="Search product name..." [(ngModel)]="query" (input)="onSearch()" />
+        <ul *ngIf="searchResults.length">
+          <li *ngFor="let p of searchResults" (click)="addProduct(p)">
+            {{p.name}} — ₹{{p.price}} — stock: {{p.stock ?? '-'}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cart" *ngIf="lines().length; else empty">
+      <mat-card>
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Q</th><th>Price</th><th>Disc%</th><th>Tax</th><th>Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let l of lines(); let i = index">
+              <td>{{l.productName}}</td>
+              <td class="qty-cell">
+                <button (click)="changeQty(i, -1)">-</button>
+                <input type="number" [(ngModel)]="l.qty" (ngModelChange)="updateLine(i)" min="1" />
+                <button (click)="changeQty(i, 1)">+</button>
+              </td>
+              <td>₹{{l.price | number:'1.2-2'}}</td>
+              <td><input type="number" [(ngModel)]="l.discountPercent" (ngModelChange)="updateLine(i)" min="0" max="100" /></td>
+              <td>{{l.taxPercent ?? 0}}%</td>
+              <td>₹{{l.total | number:'1.2-2'}}</td>
+              <td><button (click)="removeLine(i)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </div>
+
+    <ng-template #empty>
+      <mat-card class="empty">No items in cart. Scan barcode, enter ID, or search a product.</mat-card>
+    </ng-template>
+  </div>
+
+  <div class="right">
+    <mat-card class="summary">
+      <mat-list>
+        <mat-list-item>Items: {{ totalQty() }}</mat-list-item>
+        <mat-list-item>Subtotal: ₹{{ subtotal() | number:'1.2-2' }}</mat-list-item>
+        <mat-list-item>Tax: ₹{{ tax() | number:'1.2-2' }}</mat-list-item>
+        <mat-list-item>Discount: ₹{{ discount() | number:'1.2-2' }}</mat-list-item>
+        <mat-list-item><h2>Grand Total: ₹{{ grandTotal() | number:'1.2-2' }}</h2></mat-list-item>
+      </mat-list>
+
+      <div class="payment">
+        <input type="number" placeholder="Paid amount" [(ngModel)]="paid" />
+        <div>Balance: ₹{{ (paid - grandTotal()) | number:'1.2-2' }}</div>
+        <button (click)="createInvoice()" [disabled]="!lines().length" class="btn save">Create & Save</button>
+        <button (click)="printLast()" class="btn print" [disabled]="!lastInvoice">Print Last</button>
+      </div>
+    </mat-card>
+
+    <mat-card class="last" *ngIf="lastInvoice">
+      <h4>Last Invoice</h4>
+      <div>ID: {{ lastInvoice.id }}</div>
+      <div>Total: ₹{{ lastInvoice.grandTotal | number:'1.2-2' }}</div>
+    </mat-card>
+  </div>
+</div>
