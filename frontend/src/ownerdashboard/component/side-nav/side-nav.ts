@@ -38,11 +38,11 @@ export class SideNav {
   }
 
   navItems: NavItem[] = [
-    { path: '/owner-dashboard/home', icon: 'point_of_sale', label: 'Point of Sale' },
+    { path: '/admin-dashboard/home', icon: 'point_of_sale', label: 'Point of Sale' },
     // { path: '/owner-dashboard/addtruck', icon: 'local_shipping', label: 'Vechicle', notification: 3 },
-     { path: '/owner-dashboard/Inventory', icon: 'inventory', label: 'Inventory' },
+     { path: '/admin-dashboard/Inventory', icon: 'inventory', label: 'Inventory' },
       // { path: '/owner-dashboard/sales', icon: 'people', label: 'Customers' },
-      { path: '/owner-dashboard/sales', icon: 'bar_chart', label: 'Reports' },
+      { path: '/admin-dashboard/sales', icon: 'bar_chart', label: 'Reports' },
       // { path: '/owner-dashboard/home', icon: 'settings', label: 'Settings' }
   ];
 }
